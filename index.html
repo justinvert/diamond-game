@@ -8,13 +8,16 @@
 </head>
 <body>
         <div id="start"></div>
-    <div id="first"></div>
-    <div id="second"></div>
-    <div id="third"></div>
-    <div id="fourth"></div>
+    <img src ="" id="first"></div>
+    <img src ="" id="second"></div>
+    <img src ="" id="third"></div>
+    <img src ="" id="fourth"></div>
     <div id="total"></div>
+    <div id="wins"></div>
+    <div id="loss"></div>
     <div id="win"></div>
-    <div id="reset"></div>
+    <div id="losscount"></div>
+    <!-- <button id="reset">Reset</button> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     // Variables needed to store randomly generated numbers
@@ -40,17 +43,9 @@
     var startNumber = Math.floor(Math.random()* 100 + 10);
 
     console.log(startNumber);
-   $("#reset").append("<button> Reset");
-    // $("#reset").click(function() });
-    
-    function reset(){
-        
-    var firstNumber = Math.floor(Math.random() * 25);
-    var secondNumber = Math.floor(Math.random() * 25);
-    var thirdNumber = Math.floor(Math.random() * 25);
-    var fourthNumber = Math.floor(Math.random() * 25);
-    var startNumber = Math.floor(Math.random()* 100 + 10);
-    };
+//    $("#reset").append("<button> Reset");
+  
+
     $('#first').append(firstNumber);
     $('#second').append(secondNumber);
     $('#third').append(thirdNumber);
@@ -62,14 +57,16 @@
         total = total + firstNumber;
          $('#total').text("Totals added: " + total);
         console.log(total);
-        if (total == startNumber){
-            $("#win").append("You won!")
+        if (total === startNumber){
+            $('#total').text("You won! The game has reset. Click to play again!")
             wins++;
-            reset();
+            $("#wins").text("Wins: " + wins)
+           
 }
             if (total > startNumber){
-                $("#loss").append("You lost :/")
-                loss--;
+                $('#total').text("The game has reset. Please try again.");
+                loss++;
+                $("#losscount").text("Losses: " + loss)
                 reset();
             }
     
@@ -80,13 +77,15 @@
          $('#total').text("Totals added: " + total);
         console.log(total);
         if (total == startNumber){
-            $("#win").append("You won!")
+            $('#total').text("You won! The game has reset. Click to play again!")
             wins++;
+            $("#wins").text("Wins: " + wins)
             reset();
 }
-            if (total != startNumber){
-                $("#loss").append("You lost :/")
-                loss--;
+            if (total > startNumber){
+                $('#total').text("The game has reset. Please try again.");
+                loss++;
+                $("#losscount").text("Losses: " + loss)
                 reset();
             }
     
@@ -98,14 +97,17 @@
          $('#total').text("Totals added: " + total);
         console.log(total);
         if (total == startNumber){
-            $("#win").append("You won!")
+            $('#total').text("You won! The game has reset. Click to play again!")
             wins++;
+            $("#wins").text("Wins: " + wins)
             reset();
 }
-            if (total != startNumber){
-                $("#loss").append("You lost :/")
-                loss--;
+            if (total > startNumber){
+                $('#total').text("The game has reset. Please try again.");
+                loss++;
+                $("#losscount").text("Losses: " + loss)
                 reset();
+               
             }
     
     });
@@ -117,19 +119,37 @@
          $('#total').text("Totals added: " + total);
         console.log(total);
         if (total == startNumber){
-            $("#win").append("You won!")
+            $('#total').text("You won! The game has reset. Click to play again!")
             wins++;
+            $("#wins").text("Wins: " + wins)
             reset();
 }
-            if (total != startNumber){
-                $("#loss").append("You lost :/")
-                loss--;
+            if (total > startNumber){
+                // $("#loss").text("You lost :/")
+                $('#total').text("The game has reset. Please try again.");
+                loss++;
+                $("#losscount").text("Losses: " + loss)
                 reset();
             }
     
     });
     
- 
+  function reset(){
+    
+  
+    total = 0;
+   firstNumber = Math.floor(Math.random() * 25);
+   secondNumber = Math.floor(Math.random() * 25);
+    thirdNumber = Math.floor(Math.random() * 25);
+    fourthNumber = Math.floor(Math.random() * 25);
+   startNumber = Math.floor(Math.random()* 100 + 10);
+   $('#start').text("You have to match the number: " + startNumber);
+       $('#first').text(firstNumber);
+    $('#second').text(secondNumber);
+    $('#third').text(thirdNumber);
+    $('#fourth').text(fourthNumber);
+    // $("#loss").text("")
+   };
     </script>
 </body>
 </html>
