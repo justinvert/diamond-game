@@ -12,6 +12,9 @@
     <div id="second"></div>
     <div id="third"></div>
     <div id="fourth"></div>
+    <div id="total"></div>
+    <div id="win"></div>
+    <div id="reset"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     // Variables needed to store randomly generated numbers
@@ -37,14 +40,96 @@
     var startNumber = Math.floor(Math.random()* 100 + 10);
 
     console.log(startNumber);
-
+   $("#reset").append("<button> Reset");
+    // $("#reset").click(function() });
+    
+    function reset(){
+        
+    var firstNumber = Math.floor(Math.random() * 25);
+    var secondNumber = Math.floor(Math.random() * 25);
+    var thirdNumber = Math.floor(Math.random() * 25);
+    var fourthNumber = Math.floor(Math.random() * 25);
+    var startNumber = Math.floor(Math.random()* 100 + 10);
+    };
     $('#first').append(firstNumber);
     $('#second').append(secondNumber);
     $('#third').append(thirdNumber);
     $('#fourth').append(fourthNumber);
+   
     $('#start').append("You have to match the number: " + startNumber);
     
+    $("#first").click(function() {
+        total = total + firstNumber;
+         $('#total').text("Totals added: " + total);
+        console.log(total);
+        if (total == startNumber){
+            $("#win").append("You won!")
+            wins++;
+            reset();
+}
+            if (total > startNumber){
+                $("#loss").append("You lost :/")
+                loss--;
+                reset();
+            }
     
+    });
+
+     $("#second").click(function() {
+        total = total + secondNumber;
+         $('#total').text("Totals added: " + total);
+        console.log(total);
+        if (total == startNumber){
+            $("#win").append("You won!")
+            wins++;
+            reset();
+}
+            if (total != startNumber){
+                $("#loss").append("You lost :/")
+                loss--;
+                reset();
+            }
+    
+    });
+
+    
+    $("#third").click(function() {
+        total = total + thirdNumber;
+         $('#total').text("Totals added: " + total);
+        console.log(total);
+        if (total == startNumber){
+            $("#win").append("You won!")
+            wins++;
+            reset();
+}
+            if (total != startNumber){
+                $("#loss").append("You lost :/")
+                loss--;
+                reset();
+            }
+    
+    });
+
+
+    
+    $("#fourth").click(function() {
+        total = total + fourthNumber;
+         $('#total').text("Totals added: " + total);
+        console.log(total);
+        if (total == startNumber){
+            $("#win").append("You won!")
+            wins++;
+            reset();
+}
+            if (total != startNumber){
+                $("#loss").append("You lost :/")
+                loss--;
+                reset();
+            }
+    
+    });
+    
+ 
     </script>
 </body>
 </html>
