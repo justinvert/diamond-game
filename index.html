@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+        <div id="start"></div>
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="third"></div>
+    <div id="fourth"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     // Variables needed to store randomly generated numbers
@@ -19,18 +24,25 @@
     var loss = 0;
     var total = 0;
 
-    var firstNumber = Math.floor(Math.random() * 100);
+    var firstNumber = Math.floor(Math.random() * 25);
 
-    var secondNumber = Math.floor(Math.random() * 100);
+    var secondNumber = Math.floor(Math.random() * 25);
 
-    var thirdNumber = Math.floor(Math.random() * 100);
+    var thirdNumber = Math.floor(Math.random() * 25);
 
-    var fourthNumber = Math.floor(Math.random() * 100);
+    var fourthNumber = Math.floor(Math.random() * 25);
 
     console.log(firstNumber, secondNumber, thirdNumber, fourthNumber);
 
-    var startNumber = Math.floor(Math.random() * 100);
+    var startNumber = Math.floor(Math.random()* 100 + 10);
 
+    console.log(startNumber);
+
+    $('#first').append(firstNumber);
+    $('#second').append(secondNumber);
+    $('#third').append(thirdNumber);
+    $('#fourth').append(fourthNumber);
+    $('#start').append("You have to match the number: " + startNumber);
     
     
     </script>
