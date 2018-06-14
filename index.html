@@ -3,153 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" type"text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type"text/css" href="assets/css/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
+ <div class="a">  
         <div id="start"></div>
-    <img src ="" id="first"></div>
-    <img src ="" id="second"></div>
-    <img src ="" id="third"></div>
-    <img src ="" id="fourth"></div>
+    </div>
+    </br>
+<div class="b">
+<img src ="assets/images/red.png" id="first">
+<img src ="assets/images/purple.png" id="second">
+<img src ="assets/images/blue.png" id="third">
+<img src ="assets/images/green.png" id="fourth">
+</div>
+</br>
+        <div class="c">
     <div id="total"></div>
     <div id="wins"></div>
-    <div id="loss"></div>
-    <div id="win"></div>
-    <div id="losscount"></div>
-    <!-- <button id="reset">Reset</button> -->
+    <div id="losscount"></div></div>
+<div id="rules"> A number has been generated above. </br> You objective is to click on the diamonds and try to match that number.</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    // Variables needed to store randomly generated numbers
-    // Images needed with click function to generate those numbers
-    // DOM manipulation needed to put the numbers on the page (and add them together)
-    // Wins and Losses counters needed
-    // Total points needed to change throughout
-
-    var wins = 0;
-    var loss = 0;
-    var total = 0;
-
-    var firstNumber = Math.floor(Math.random() * 25);
-
-    var secondNumber = Math.floor(Math.random() * 25);
-
-    var thirdNumber = Math.floor(Math.random() * 25);
-
-    var fourthNumber = Math.floor(Math.random() * 25);
-
-    console.log(firstNumber, secondNumber, thirdNumber, fourthNumber);
-
-    var startNumber = Math.floor(Math.random()* 100 + 10);
-
-    console.log(startNumber);
-//    $("#reset").append("<button> Reset");
-  
-
-    $('#first').append(firstNumber);
-    $('#second').append(secondNumber);
-    $('#third').append(thirdNumber);
-    $('#fourth').append(fourthNumber);
-   
-    $('#start').append("You have to match the number: " + startNumber);
-    
-    $("#first").click(function() {
-        total = total + firstNumber;
-         $('#total').text("Totals added: " + total);
-        console.log(total);
-        if (total === startNumber){
-            $('#total').text("You won! The game has reset. Click to play again!")
-            wins++;
-            $("#wins").text("Wins: " + wins)
-           
-}
-            if (total > startNumber){
-                $('#total').text("The game has reset. Please try again.");
-                loss++;
-                $("#losscount").text("Losses: " + loss)
-                reset();
-            }
-    
-    });
-
-     $("#second").click(function() {
-        total = total + secondNumber;
-         $('#total').text("Totals added: " + total);
-        console.log(total);
-        if (total == startNumber){
-            $('#total').text("You won! The game has reset. Click to play again!")
-            wins++;
-            $("#wins").text("Wins: " + wins)
-            reset();
-}
-            if (total > startNumber){
-                $('#total').text("The game has reset. Please try again.");
-                loss++;
-                $("#losscount").text("Losses: " + loss)
-                reset();
-            }
-    
-    });
-
-    
-    $("#third").click(function() {
-        total = total + thirdNumber;
-         $('#total').text("Totals added: " + total);
-        console.log(total);
-        if (total == startNumber){
-            $('#total').text("You won! The game has reset. Click to play again!")
-            wins++;
-            $("#wins").text("Wins: " + wins)
-            reset();
-}
-            if (total > startNumber){
-                $('#total').text("The game has reset. Please try again.");
-                loss++;
-                $("#losscount").text("Losses: " + loss)
-                reset();
-               
-            }
-    
-    });
-
-
-    
-    $("#fourth").click(function() {
-        total = total + fourthNumber;
-         $('#total').text("Totals added: " + total);
-        console.log(total);
-        if (total == startNumber){
-            $('#total').text("You won! The game has reset. Click to play again!")
-            wins++;
-            $("#wins").text("Wins: " + wins)
-            reset();
-}
-            if (total > startNumber){
-                // $("#loss").text("You lost :/")
-                $('#total').text("The game has reset. Please try again.");
-                loss++;
-                $("#losscount").text("Losses: " + loss)
-                reset();
-            }
-    
-    });
-    
-  function reset(){
-    
-  
-    total = 0;
-   firstNumber = Math.floor(Math.random() * 25);
-   secondNumber = Math.floor(Math.random() * 25);
-    thirdNumber = Math.floor(Math.random() * 25);
-    fourthNumber = Math.floor(Math.random() * 25);
-   startNumber = Math.floor(Math.random()* 100 + 10);
-   $('#start').text("You have to match the number: " + startNumber);
-       $('#first').text(firstNumber);
-    $('#second').text(secondNumber);
-    $('#third').text(thirdNumber);
-    $('#fourth').text(fourthNumber);
-    // $("#loss").text("")
-   };
-    </script>
+    <script type="text/javascript" src="assets/javascript/game.js"> </script>
 </body>
 </html>

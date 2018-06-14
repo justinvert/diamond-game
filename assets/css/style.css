@@ -1,0 +1,46 @@
+body{
+    font-family: 'Orbitron', sans-serif;
+    background-color: #000;
+    color:#fff;
+    }
+
+    .column {
+           
+            width: 100%;
+            text-align: center;
+            }
+
+        .row {
+    display: table;
+    clear: both;
+    text-align: center;
+}
+
+#start{
+    font-size:40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#rules{
+    text-align: center;
+    font-size:25px;
+    letter-spacing: 1px;
+}
+
+div.a {
+    text-align: center;
+    clear: auto;
+    margin-top:25px;
+    letter-spacing: 1px;
+}
+div.b {
+    text-align: center;
+}
+div.c {
+    font-size: 30px;
+    text-align: center;
+    color: yellow;
+    letter-spacing: 1px;
+}
+        
