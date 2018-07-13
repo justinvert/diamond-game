@@ -1,5 +1,6 @@
 # Diamond Game
 
+ <a href="https://justinvert.github.io/diamond-game/">Live Version</a>
 The objective of this game is to click on the dimaonds provided and match the randomly generated number. The diamond numbers themselves are randomly generated as well. If the user correctly adds up to that amount, they win, adding a win to their score. If the user goes over the amount of the randomly generated number, then that counts as a loss and they lose that particular round.
 
 # Generating the numbers
